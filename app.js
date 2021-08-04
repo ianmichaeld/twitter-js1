@@ -6,6 +6,11 @@ app.get('/', (req, res) => {
     res.send('Welcome to twitter-js')
 })
 
+app.use( (req, res, next) => {
+    console.log(req.method + req.url)
+    next()
+})
+
 app.get('/news', (req, res) => {
     res.send('Your news feed')
 })
