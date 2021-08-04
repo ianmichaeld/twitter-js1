@@ -1,0 +1,14 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "Twitter clone for practicing Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ian Dewsbury",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
