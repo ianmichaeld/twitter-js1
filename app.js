@@ -1,14 +1,12 @@
 const express = require( 'express' )
 const app = express()
+const volleyball = require( 'volleyball' )
 const port = 3000
+
+app.use(volleyball)
 
 app.get('/', (req, res) => {
     res.send('Welcome to twitter-js')
-})
-
-app.use( (req, res, next) => {
-    console.log(req.method + req.url)
-    next()
 })
 
 app.get('/news', (req, res) => {
