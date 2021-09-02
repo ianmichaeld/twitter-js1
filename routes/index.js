@@ -15,4 +15,10 @@ router.get('/users/:name', ( req, res ) => {
     res.render( 'index', { tweets: list } );
   });
 
+router.get('/tweets/:id', ( req, res ) => {
+    let id = +req.params.id;
+    let list = tweetBank.find( { id: id } );
+    res.render( 'index', { tweets: list } );
+  });
+
 module.exports = router
