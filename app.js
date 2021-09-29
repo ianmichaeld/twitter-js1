@@ -15,10 +15,11 @@ app.set( 'view engine', 'html' ) // have res.render work with html files
 app.engine( 'html', nunjucks.render ) // when giving html files to res.render, tell it to use nunjucks
 nunjucks.configure( 'views', { noCache: true } ) // point nunjucks to the proper directory for templates
 
-app.use( '/', routes )
 
 const server = app.listen(port, () => {
     console.log( `twitter-js app listening at http://localhost:${port}` )
 })
 
 const io = require( 'socket.io' )( server ) 
+
+app.use( '/', routes( io ) )
